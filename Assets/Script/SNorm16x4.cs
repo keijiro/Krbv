@@ -1,7 +1,9 @@
 using Unity.Mathematics;
+using System.Runtime.InteropServices;
 
 namespace Krbv
 {
+    [StructLayout(LayoutKind.Sequential)]
     public struct SNorm16x4
     {
         public uint lo;

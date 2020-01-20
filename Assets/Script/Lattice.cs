@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Krbv
 {
-    [ExecuteInEditMode]
+    [ExecuteInEditMode, RequireComponent(typeof(MeshRenderer))]
     public sealed class Lattice : MonoBehaviour
     {
         #region Editable attributes
@@ -18,7 +18,6 @@ namespace Krbv
         [SerializeField, Range(1, 8)] int _noiseOctave = 2;
         [SerializeField] float _noiseAmplitude = 0.1f;
         [SerializeField] float _noiseAnimation = 0.5f;
-        [SerializeField] Material _material = null;
 
         void OnValidate()
         {
@@ -52,7 +51,6 @@ namespace Krbv
 
         void Update()
         {
-            Debug.Log(System.Runtime.InteropServices.Marshal.SizeOf(typeof(Vertex)));
             using (var vertexArray = CreateVertexArray())
             {
                 if (_meshResolution.Equals(_resolution))
@@ -63,7 +61,15 @@ namespace Krbv
 
             UpdateMeshBounds();
 
-            Graphics.DrawMesh(_mesh, transform.localToWorldMatrix, _material, gameObject.layer);
+            var meshFilter = GetComponent<MeshFilter>();
+
+            if (meshFilter == null)
+            {
+                meshFilter = gameObject.AddComponent<MeshFilter>();
+                meshFilter.hideFlags = HideFlags.DontSave | HideFlags.NotEditable;
+            }
+
+            meshFilter.sharedMesh = _mesh;
         }
 
         #endregion
