@@ -9,11 +9,8 @@
     }
   ],
   "dependencies": {
-    "com.unity.burst": "1.1.2",
     "com.unity.mathematics": "1.1.0",
-    "com.unity.timeline": "1.2.10",
     "jp.keijiro.kino.post-processing": "2.1.10",
-    "jp.keijiro.recorder.ffmpeg": "1.0.0",
-    "jp.keijiro.test-assets": "1.0.1"
+    "jp.keijiro.recorder.ffmpeg": "1.0.0"
   }
 }
