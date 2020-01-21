@@ -940,7 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _noiseFrequency: 0.1
   _noiseToRotation: 1.5
-  _speed: 0.08
+  _speed: 4.8
 --- !u!4 &1507507976
 Transform:
   m_ObjectHideFlags: 0

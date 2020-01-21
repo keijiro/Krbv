@@ -21,7 +21,7 @@ sealed class SpiralMove : MonoBehaviour
 
         var rot = quaternion.EulerZXY(n * _noiseToRotation);
 
-        _position += math.mul(rot, math.float3(0, 0, _speed));
+        _position += math.mul(rot, math.float3(0, 0, _speed * Time.deltaTime));
 
         transform.localPosition = _position;
         transform.localRotation = rot;
