@@ -9,8 +9,12 @@
     }
   ],
   "dependencies": {
-    "com.unity.mathematics": "1.1.0",
-    "jp.keijiro.kino.post-processing": "2.1.10",
-    "jp.keijiro.recorder.ffmpeg": "1.0.0"
+    "com.unity.mathematics": "1.2.1",
+    "com.unity.render-pipelines.high-definition": "7.5.1",
+    "com.unity.timeline": "1.4.3",
+    "jp.keijiro.kino.post-processing": "2.1.15",
+    "jp.keijiro.recorder.ffmpeg": "1.0.2",
+    "com.unity.modules.imageconversion": "1.0.0",
+    "com.unity.modules.xr": "1.0.0"
   }
 }
